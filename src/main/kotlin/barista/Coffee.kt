@@ -1,1 +1,0 @@
-data class Coffee (type: CoffeeType)
