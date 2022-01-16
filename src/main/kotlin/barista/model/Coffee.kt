@@ -1,5 +1,6 @@
 package barista.model
 
 data class Coffee(
-    val type: CoffeeType
+    val name: String,
+    val capacityInMl: Long
 )

@@ -1,7 +1,13 @@
 package barista.model
 
-class Barista(val name: String) {
-	fun acceptOrder(type: CoffeeType): Coffee {
-		return Coffee(type)
+class Barista: IBarista {
+
+	private val items: MutableList<Coffee> = mutableListOf(
+		Coffee("Normal", 50),
+		Coffee("Americano", 100)
+	)
+
+	override fun getCoffee(orderId: Long, coffeeName: String): Coffee {
+		return items.find { coffee -> coffee.name == coffeeName} ?: Coffee("", 0)
 	}
 }
